@@ -103,7 +103,7 @@ const TaskCard = ({ task, category, onToggleComplete, onDelete, onEdit }) => {
             </div>
           </div>
 
-          <div className="flex items-center gap-3 mt-3">
+<div className="flex items-center gap-3 mt-3 flex-wrap">
             {category && (
               <Badge
                 variant="default"
@@ -120,6 +120,17 @@ const TaskCard = ({ task, category, onToggleComplete, onDelete, onEdit }) => {
               </Badge>
             )}
 
+            {task.assignee && (
+              <Badge
+                variant="outline"
+                size="sm"
+                className="flex items-center gap-1 text-gray-700 border-gray-200 bg-gray-50 hover:bg-gray-100"
+              >
+                <ApperIcon name="User" size={12} />
+                {task.assignee}
+              </Badge>
+            )}
+
             {task.dueDate && (
               <div className={`flex items-center gap-1 text-xs ${getDueDateColor(task.dueDate)}`}>
                 <ApperIcon name="Calendar" size={12} />
@@ -132,7 +143,7 @@ const TaskCard = ({ task, category, onToggleComplete, onDelete, onEdit }) => {
                 variant="ghost"
                 size="sm"
                 onClick={() => setIsExpanded(!isExpanded)}
-                className="text-xs text-primary-600 hover:text-primary-700 p-0 h-auto"
+                className="text-xs text-primary-600 hover:text-primary-700 p-0 h-auto ml-auto"
               >
                 {isExpanded ? "Show less" : "Show more"}
               </Button>

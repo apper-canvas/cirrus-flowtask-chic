@@ -20,7 +20,7 @@ class TaskService {
     return { ...task };
   }
 
-  async create(taskData) {
+async create(taskData) {
     await new Promise(resolve => setTimeout(resolve, 250));
     
     const newTask = {
@@ -30,6 +30,7 @@ class TaskService {
       categoryId: taskData.categoryId || null,
       priority: taskData.priority || "medium",
       dueDate: taskData.dueDate || null,
+      assignee: taskData.assignee || null,
       completed: false,
       createdAt: new Date().toISOString(),
       completedAt: null
