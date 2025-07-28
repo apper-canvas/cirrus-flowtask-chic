@@ -1,9 +1,9 @@
-import React, { useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
-import toast from "react-hot-toast";
-import ApperIcon from "@/components/ApperIcon";
-import FilterSidebar from "@/components/molecules/FilterSidebar";
-import Button from "@/components/atoms/Button";
+import React, { useState } from 'react'
+import { AnimatePresence, motion } from 'framer-motion'
+import { toast } from 'react-toastify'
+import ApperIcon from '@/components/ApperIcon'
+import FilterSidebar from '@/components/molecules/FilterSidebar'
+import Button from '@/components/atoms/Button'
 
 const Layout = ({ children, filters, onFiltersChange, categories, taskCounts }) => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
